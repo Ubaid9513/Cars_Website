@@ -1,0 +1,54 @@
+* {
+    margin: 0% !important;
+    padding: 0% !important;
+}
+html , body {
+    width: 100%;
+    height: 100%;
+}
+/* body {} */
+.navbar {
+    background-color: orange !important;
+    height: 50px;
+}
+.black {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #000;
+}
+.red {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: red;
+}
+.white {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #d4cbcb;
+}
+.green {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: green;
+}
+.blue {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: blue;
+}
+.orange {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: orange;
+}
+.card-img-top {
+    width: 300px;
+    height: 180px;
+    object-fit: cover;
+}
