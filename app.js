@@ -217,23 +217,23 @@ var model = document.getElementById("model");
 brand.innerHTML += `<option>Select Brand Name</option>`;
 model.innerHTML += `<option>Select Model Name</option>`;
 
-function renderAllCars(){
-for (var key in carList) {
-  // console.log(key);
-  brand.innerHTML += `<option value = "${key}">${key}</option>`;
-  for (var key1 in carList[key]) {
-    // console.log(key1);
-    var obj = carList[key][key1];
-    // console.log(obj);
-    var colorDiv = "";
-    for (var i = 0; i < obj.colors.length; i++) {
-      // console.log(obj.colors[i]);
-      colorDiv += `<div class = "${obj.colors[i]}"></div>`;
-    }
+function renderAllCars() {
+  for (var key in carList) {
+    // console.log(key);
+    brand.innerHTML += `<option value = "${key}">${key}</option>`;
+    for (var key1 in carList[key]) {
+      // console.log(key1);
+      var obj = carList[key][key1];
+      // console.log(obj);
+      var colorDiv = "";
+      for (var i = 0; i < obj.colors.length; i++) {
+        // console.log(obj.colors[i]);
+        colorDiv += `<div class = "${obj.colors[i]}"></div>`;
+      }
 
-    main.innerHTML += `
+      main.innerHTML += `
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 my-2">
-    <div class="card " style="width: 100%; height:20rem;">
+          <div class="card p-2" style="width: 100%; height:20rem;">
                 <img src="${
                   obj.image || "./Images/Ford Aspire.jpeg"
                 }" class="card-img-top" alt="img">
@@ -248,10 +248,11 @@ for (var key in carList) {
                   ${colorDiv}</div>
                 </div>
               </div>
-        </div>
+    </div>
       `;
+    }
   }
-}}
+}
 
 renderAllCars();
 
@@ -266,16 +267,17 @@ function setModel() {
 
 var carDetail = document.getElementById("car-detail");
 function searchCar() {
-  main.innerHTML = ""
-  main.style.display = "none"
-  carDetail.style.display = "flex"
+  main.innerHTML = "";
+  main.style.display = "none";
+  carDetail.style.display = "flex";
   var car = carList[brand.value][model.value];
 
   carDetail.innerHTML = `
   <div class="card mb-3" >
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="${car.image || "./Images/Ford Aspire.jpeg"
+                <img src="${
+                  car.image || "./Images/Ford Aspire.jpeg"
                 }" class="img-fluid rounded-start" alt="img">
               </div>
               <div class="col-md-8">
@@ -297,19 +299,6 @@ function clearSearch() {
   main.style.display = "flex";
   renderAllCars();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // var companySelect = document.getElementById("car-company");
 // var modelSelect = document.getElementById("car-model");
