@@ -219,15 +219,11 @@ model.innerHTML += `<option>Select Model Name</option>`;
 
 function renderAllCars() {
   for (var key in carList) {
-    // console.log(key);
     brand.innerHTML += `<option value = "${key}">${key}</option>`;
     for (var key1 in carList[key]) {
-      // console.log(key1);
       var obj = carList[key][key1];
-      // console.log(obj);
       var colorDiv = "";
       for (var i = 0; i < obj.colors.length; i++) {
-        // console.log(obj.colors[i]);
         colorDiv += `<div class = "${obj.colors[i]}"></div>`;
       }
 
@@ -299,46 +295,3 @@ function clearSearch() {
   main.style.display = "flex";
   renderAllCars();
 }
-
-// var companySelect = document.getElementById("car-company");
-// var modelSelect = document.getElementById("car-model");
-// var detailsDiv = document.getElementById("car-details");
-
-// companySelect.addEventListener("change", function (e) {
-//     var companyName = e.target.value;
-//     var models = carCompanies[companyName].models;
-//     var html = models.map((model) => {
-//         return `<option value="${model}">${model}</option>`;
-//     }).join("");
-//     modelSelect.innerHTML = html;
-// });
-
-// modelSelect.addEventListener("change", function (e) {
-//     var companyName = companySelect.value;
-//     var modelName = e.target.value;
-//     var details = carCompanies[companyName].details[modelName];
-//     var html = `<div class="col">
-// <h2 class="modelname">${modelName}</h2>
-// <p class="det">Name: ${details.Name}</p>
-// <p class="det">Model: ${details.Model}</p>
-// <p class="det">Seat: ${details.Seats}</p>
-// <p class="det">Developed: ${details.Developed}</p>
-// <p class="det">Introduced: ${details.Introduced}</p>
-// </div>
-// `;
-//     detailsDiv.innerHTML = html;
-// });
-
-// function scrollToBottom(){
-//     window.scrollTo(0,document.body.scrollHeight);
-// }
-
-// document.addEventListener('contextmenu',
-//     event => event.preventDefault()
-// )
-//     document.onkeydown = function(e) {
-//         if ((e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 123)){
-//             alert('Not Allowed Due to Privacy!');
-//         }
-//         return false;
-// };
